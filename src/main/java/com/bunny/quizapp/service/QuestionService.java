@@ -19,4 +19,18 @@ public class QuestionService {
 
 	}
 
+	public List<Question> getQuestionByCategory(String category) {
+		return questionDoa.findByCategory(category);
+	}
+
+	public String addQuestion(Question question) {
+		questionDoa.save(question);
+		return "Data Successfully Save";
+	}
+
+	public String deletQuestionById(Integer id) {
+		questionDoa.deleteById(id);
+		return "Data Successfully Delete "+id;
+	}
+
 }
