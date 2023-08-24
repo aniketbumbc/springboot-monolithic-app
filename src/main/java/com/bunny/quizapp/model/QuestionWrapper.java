@@ -1,25 +1,24 @@
-package com.bunny.quizapp;
+package com.bunny.quizapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Data;
-
-@Data
-@Entity
-public class Question {
+public class QuestionWrapper {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String category;
-	private String option1;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public QuestionWrapper(Integer id, String option1, String option2, String option3, String option4, String level,
+			String questionTitle) {
+		super();
+		this.id = id;
+		this.option1 = option1;
+		this.option2 = option2;
+		this.option3 = option3;
+		this.option4 = option4;
+		this.level = level;
+		this.questionTitle = questionTitle;
 	}
 	public String getOption1() {
 		return option1;
@@ -45,12 +44,6 @@ public class Question {
 	public void setOption4(String option4) {
 		this.option4 = option4;
 	}
-	public String getAnswer() {
-		return answer;
-	}
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
 	public String getLevel() {
 		return level;
 	}
@@ -63,18 +56,12 @@ public class Question {
 	public void setQuestionTitle(String questionTitle) {
 		this.questionTitle = questionTitle;
 	}
+	private String option1;
 	private String option2;
 	private String option3;
 	private String option4;
-	private String answer;
 	private String level;
 	private String questionTitle;
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
+
+
 }
-
-
