@@ -60,7 +60,10 @@ public class QuizService {
 		List<Question> questions = quiz.getQuestions();
 		int right = 0;
 		int i = 0;
+		
 
+		
+		
 		for (Response resp : responses) {
 
 			if (resp.getResponse().equals(questions.get(i).getAnswer())) {
